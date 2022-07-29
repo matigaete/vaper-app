@@ -1,4 +1,0 @@
-#!/bin/sh
-
-echo "Playwright"
-exit 0
