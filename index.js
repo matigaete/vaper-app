@@ -4,7 +4,7 @@ while (true) {
   const time = new Date()
   console.log(`Script ejecutado a las ${time.toLocaleTimeString()} el día ${time.toDateString()}`)
   await findStock()
-  await sleep(5000) // 10 Seconds
+  await sleep(2000) // 10 Seconds
 }
 
 function sleep(ms) {
