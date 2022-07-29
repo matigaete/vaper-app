@@ -1,71 +1,91 @@
 export const flavours = [
   {
-    nombre: "Frutilla platano",
-    route: "frutilla-platano",
+    nombre: 'Frutilla platano',
+    route: 'frutilla-platano',
   },
   {
-    nombre: "Sandia Ice",
-    route: "prod2",
+    nombre: 'Sandia Ice',
+    route: 'prod2',
   },
   {
-    nombre: "Arandano Ice",
-    route: "arandano-ice",
+    nombre: 'Arandano Ice',
+    route: 'arandano-ice',
   },
   {
-    nombre: "Menta Ice",
-    route: "menta-ice",
+    nombre: 'Menta Ice',
+    route: 'menta-ice',
   },
   {
-    nombre: "Frutilla",
-    route: "frutilla",
+    nombre: 'Frutilla',
+    route: 'frutilla',
   },
   {
-    nombre: "Chicle",
-    route: "chicle",
+    nombre: 'Chicle',
+    route: 'chicle',
   },
   {
-    nombre: "Redbull",
-    route: "prod1",
+    nombre: 'Redbull',
+    route: 'prod1',
   },
   {
-    nombre: "Frutilla Mango",
-    route: "frutilla-mango",
+    nombre: 'Frutilla Mango',
+    route: 'frutilla-mango',
   },
   {
-    nombre: "Mamba",
-    route: "mamba",
+    nombre: 'Mamba',
+    route: 'mamba',
   },
   {
-    nombre: "Arandano",
-    route: "arandano",
+    nombre: 'Arandano',
+    route: 'arandano',
   },
   {
-    nombre: "Frutilla Limon",
-    route: "frutilla-limon",
+    nombre: 'Frutilla Limon',
+    route: 'frutilla-limon',
   },
   {
-    nombre: "Frutilla Sandia Ice",
-    route: "frutilla-sandia-ice",
+    nombre: 'Frutilla Sandia Ice',
+    route: 'frutilla-sandia-ice',
   },
   {
-    nombre: "Piña colada",
-    route: "pina-colada",
+    nombre: 'Piña colada',
+    route: 'pina-colada',
   },
   {
-    nombre: "Uva",
-    route: "uva",
+    nombre: 'Uva',
+    route: 'uva',
   },
   {
-    nombre: "Dulces",
-    route: "dulces",
+    nombre: 'Dulces',
+    route: 'dulces',
   },
-];
+]
+
+export const selections = [
+  {
+    selectName: 'AAAAAA', //Mati
+    phoneNumber: '+56966067120',
+    favorites: [
+      'Arandano',
+      'Dulces',
+      'Uva',
+      'Redbull'
+    ]
+  },
+  {
+    selectName: 'IVAAAAN',
+    phoneNumber: '+56982209856',
+    favorites: [
+      'Frutilla Mango'
+    ]
+  }
+]
 
 export const vaper = {
   hasSchema: false,
-  url: "https://fumechile.cl/producto",
+  url: 'https://fumechile.cl/producto',
   checkStock: async ({ page }) => {
-    const content = await page.textContent(".out-of-stock");
-    return content.includes("Agotado") === false;
+    const content = await page.textContent('.out-of-stock');
+    return content.includes('Agotado') === false;
   },
-};
+}
