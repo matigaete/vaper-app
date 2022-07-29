@@ -12,7 +12,7 @@ const sendSms = async (text, phoneNumber) => {
     }
     ]
   }
-  console.log(body)
+
   const options = {
     method: 'POST',
     headers: {

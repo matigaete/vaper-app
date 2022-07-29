@@ -63,6 +63,13 @@ export const flavours = [
 
 export const selections = [
   {
+    selectName: 'IVAAAAN',
+    phoneNumber: '+56982209856',
+    favorites: [
+      'Frutilla Mango'
+    ]
+  },
+  {
     selectName: 'AAAAAA', //Mati
     phoneNumber: '+56966067120',
     favorites: [
@@ -70,13 +77,6 @@ export const selections = [
       'Dulces',
       'Uva',
       'Redbull'
-    ]
-  },
-  {
-    selectName: 'IVAAAAN',
-    phoneNumber: '+56982209856',
-    favorites: [
-      'Frutilla Mango'
     ]
   }
 ]

@@ -1,6 +1,8 @@
 // @ts-check
-const { chromium } = require('playwright-chromium')
-const { flavours, vaper } = require('./constants')
+import { chromium } from 'playwright-chromium'
+import { flavours, selections, vaper } from './constants.js'
+import sendSms from './sms.js'
+
 
 const exec = async () => {
   const browser = await chromium.launch({ headless: true })
@@ -23,11 +25,18 @@ const exec = async () => {
     //await page.screenshot({ path: `screenshots/${nombre}.png` })
     await page.close()
   }
-
-  const availableOn = available.length > 0
-    ? `Disponible los siguientes sabores: ${available.join(', ')}`
-    : 'No hay stock 😢'
-
+  
+  if (available.length > 0) {
+    const availableProducts = available.join(', ')
+    const availableOn = `LLEEEEEGO STOCK DE: ${availableProducts} corre ctmmmmm 🏃🏻💨`
+    const selected = selections.find((select) => available.find((av) => select.favorites.includes(av)))
+    if (selected) {
+      const { phoneNumber } = selected
+      sendSms(availableOn, phoneNumber)
+    }
+  } else {
+    console.log('Aún nada 🥲')
+  }
   await browser.close()
 }
 
