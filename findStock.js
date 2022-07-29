@@ -4,7 +4,7 @@ import sendSms from './sms.js'
 
 
 export const findStock = async () => {
-  const browser = await chromium.launch({ headless: true })
+  const browser = await chromium.launch({ headless: true, chromiumSandbox: false })
   const available = []
 
   for (const flavour of flavours) {
