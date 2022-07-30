@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-prebuild": "npm i -g heroku && heroku create --buildpack https://github.com/playwright-community/heroku-playwright-buildpack.git",
-    "heroku-postbuild": "heroku plugins:install buildpack-registry && heroku buildpacks:set https://github.com/mxschmitt/heroku-playwright-buildpack.git -a vaper-app",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
