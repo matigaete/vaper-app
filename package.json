@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "npm install -g heroku",
+    "prepack": "heroku buildpacks:set https://github.com/mxschmitt/heroku-playwright-buildpack.git -a vaper-app",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
