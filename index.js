@@ -1,5 +1,7 @@
+import { application } from "express";
 import { findStock } from "./findStock.js";
 
+application.listen(process.env.PORT || 3000)
 while (true) {
   const time = new Date()
   console.log(`Script ejecutado a las ${time.toLocaleTimeString()} el día ${time.toDateString()}`)
