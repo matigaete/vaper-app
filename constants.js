@@ -61,17 +61,19 @@ export const flavours = [
   },
 ]
 
+const { PHONE_1, PHONE_2 } = process.env
+
 export const selections = [
   {
     selectName: 'IVAAAAN',
-    phoneNumber: '+56982209856',
+    phoneNumber: PHONE_1,
     favorites: [
       'Frutilla Mango'
     ]
   },
   {
     selectName: 'AAAAAA', //Mati
-    phoneNumber: '+56966067120',
+    phoneNumber: PHONE_2,
     favorites: [
       'Arandano',
       'Dulces',
@@ -85,7 +87,7 @@ export const vaper = {
   hasSchema: false,
   url: 'https://fumechile.cl/producto',
   checkStock: async ({ page }) => {
-    const content = await page.textContent('.out-of-stock');
-    return content.includes('Agotado') === false;
+    const content = await page.textContent('.stock')
+    return content.includes('Agotado') === false
   },
 }

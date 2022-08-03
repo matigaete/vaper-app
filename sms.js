@@ -1,5 +1,7 @@
 import fetch from 'node-fetch'
 
+const { AUTH, API_KEY, API_HOST, API_URL } = process.env
+
 const sendSms = async (text, phoneNumber) => {
   const body = {
     messages: [{
@@ -17,15 +19,15 @@ const sendSms = async (text, phoneNumber) => {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      Authorization: 'Basic bWF0aS5nYWV0ZS5wb25jZUBnbWFpbC5jb206TUB0aWFzMTk5NTQwNTEz',
+      Authorization: AUTH,
       'Content-Type': 'application/json',
-      'X-RapidAPI-Key': 'b134d96c62mshafe8ce68148309bp172d5fjsn9f3b7f74fc09',
-      'X-RapidAPI-Host': 'clicksend.p.rapidapi.com'
+      'X-RapidAPI-Key': API_KEY,
+      'X-RapidAPI-Host': API_HOST
     },
     body: JSON.stringify(body)
   };
 
-  fetch('https://clicksend.p.rapidapi.com/sms/send', options)
+  fetch(API_URL, options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err))

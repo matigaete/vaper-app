@@ -1,5 +1,7 @@
-[buildpack]
-homepage = "https://github.com/heroku/heroku-buildpack-nodejs"
+[[build.buildpacks]]
+uri = "https://github.com/heroku/heroku-buildpack-nodejs"
 
-[buildpack]
-homepage = "https://github.com/mxschmitt/heroku-playwright-buildpack.git"
+[[build.buildpacks]]
+uri = "https://github.com/mxschmitt/heroku-playwright-buildpack.git"
+
+pack build
